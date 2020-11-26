@@ -11,7 +11,7 @@ import os
 import numpy as np
 import pandas as pd
 import tensorflow as tf
-from keras.callbacks import Callback
+from tensorflow.keras.callbacks import Callback
 from nbeats_keras.model import NBeatsNet
 
 pd.set_option('display.max_rows', None)
@@ -94,12 +94,12 @@ print('x_val_uni.shape=', x_val_uni.shape)
 print('y_val_uni.shape=', y_val_uni.shape)
 
 b_val_uni = np.mean(x_val_uni, axis=1)[..., 0]
-print(np.mean(np.abs(b_val_uni - y_val_uni)))
-print(np.mean(np.abs(dn.apply_inv(b_val_uni) - dn.apply_inv(y_val_uni))))
+# print(np.mean(np.abs(b_val_uni - y_val_uni)))
+# print(np.mean(np.abs(dn.apply_inv(b_val_uni) - dn.apply_inv(y_val_uni))))
 
 b2_val_uni = x_val_uni[:, -1, 0]
-print(np.mean(np.abs(b2_val_uni - y_val_uni)))
-print(np.mean(np.abs(dn.apply_inv(b2_val_uni) - dn.apply_inv(y_val_uni))))
+# print(np.mean(np.abs(b2_val_uni - y_val_uni)))
+# print(np.mean(np.abs(dn.apply_inv(b2_val_uni) - dn.apply_inv(y_val_uni))))
 
 m = NBeatsNet(stack_types=(NBeatsNet.GENERIC_BLOCK, NBeatsNet.GENERIC_BLOCK, NBeatsNet.GENERIC_BLOCK),
               nb_blocks_per_stack=3,

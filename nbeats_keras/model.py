@@ -1,9 +1,9 @@
 import numpy as np
-from keras import backend as K
-from keras.layers import Concatenate
-from keras.layers import Input, Dense, Lambda, Subtract, Add, Reshape
-from keras.models import Model
-from keras.optimizers import Adam
+from tensorflow.keras import backend as K
+from tensorflow.keras.layers import Concatenate
+from tensorflow.keras.layers import Input, Dense, Lambda, Subtract, Add, Reshape
+from tensorflow.keras.models import Model
+from tensorflow.keras.optimizers import Adam
 
 
 class NBeatsNet:
